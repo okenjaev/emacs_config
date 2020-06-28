@@ -1,4 +1,4 @@
-;;; init.el --- summary -*- lexical-binding: t -*-
+;;; custom.el --- summary -*- lexical-binding: t -*-
 
 ;; Author: Olimjon Kenjaev
 ;; Maintainer: Olimjon Kenjaev
@@ -26,25 +26,30 @@
 
 ;;; Commentary:
 
-;; this is my configuration for my Emacs
+;; My custom functions
 
 ;;; Code:
 
-(load "~/.emacs.d/lisp/editor")
-(load "~/.emacs.d/lisp/packages")
-(load "~/.emacs.d/lisp/custom")
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (irony swiper use-package projectile magit company))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
+;; something something
+(defun after-newline ()
+  (interactive)
+  (end-of-line)
+  (newline-and-indent))
 
-;;; init.el ends here
+(defun before-newline ()
+  (interactive)
+  (beginning-of-line)
+  (newline)
+  (previous-line))
 
+
+(global-set-key (kbd "M-RET") 'after-newline)
+(global-set-key (kbd "C-<return>") 'before-newline)
+
+;;; scrollers
+(global-set-key "\M-n" "\C-u1\C-v")
+(global-set-key "\M-p" "\C-u1\M-v")
+
+(provide 'custom)
+
+;;; custom.el ends here

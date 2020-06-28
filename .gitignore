@@ -6,3 +6,6 @@ elpa/
 *.eld
 session*
 transient/
+irony/
+bookmarks
+network-security.data
