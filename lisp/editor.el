@@ -68,7 +68,6 @@
   (unless (package-installed-p package)
     (package-install package))))
 
-(install-list-of-packages (list 'use-package))
 (install-list-of-packages '(use-package))
 
 (provide 'editor)
