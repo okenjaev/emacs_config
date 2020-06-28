@@ -87,6 +87,9 @@
   (c-mode . company-mode)
   (c++-mode . company-mode)
   (emacs-lisp-mode . company-mode)
+  :custom
+  (company-minimum-prefix-length 3)
+  (company-idle-delay 0.1)
   :config
   (use-package company-irony
     :ensure t
@@ -100,8 +103,6 @@
     :config
     (add-to-list 'company-backends 'company-irony-c-headers))
 
-  (setq company-minimum-prefix-length 3)
-  (setq company-idle-delay 0.1)
   (defvar company-mode/enable-yas t
     "Enable yasnippet for all backends.")
 
@@ -168,16 +169,15 @@
   :hook
   (c++-mode . rtags-start-process-unless-running)
   (c-mode . rtags-start-process-unless-running)
+  :custom
+  (rtags-use-helm t)
+  (rtags-autostart-diagnostics t)
+  (rtags-completions-enabled t)
   :config
-
   (if (eq system-type 'darwin)
       (setq rtags-path "/usr/local/bin"))
-  
   (rtags-enable-standard-keybindings)
-  (setq rtags-use-helm t)
-  (setq rtags-autostart-diagnostics t)
-  (rtags-diagnostics)
-  (setq rtags-completions-enabled t))
+  (rtags-diagnostics))
 
 (use-package flycheck
   :ensure t
