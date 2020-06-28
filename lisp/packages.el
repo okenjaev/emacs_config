@@ -57,7 +57,6 @@
   :ensure t
   :config
   (powerline-center-theme)
-  (setq powerline-default-separator 'wave)
   :pin melpa)
 
 ;; undotree
@@ -166,7 +165,14 @@
   :bind
   ("M-." . (function rtags-find-symbol-at-point))
   ("M-," . (function rtags-find-references-at-point))
+  :hook
+  (c++-mode . rtags-start-process-unless-running)
+  (c-mode . rtags-start-process-unless-running)
   :config
+
+  (if (eq system-type 'darwin)
+      (setq rtags-path "/usr/local/bin"))
+  
   (rtags-enable-standard-keybindings)
   (setq rtags-use-helm t)
   (setq rtags-autostart-diagnostics t)
