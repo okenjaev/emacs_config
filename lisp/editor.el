@@ -39,17 +39,18 @@
 (toggle-scroll-bar -1)
 (tool-bar-mode -1)
 
-;; auto close brackets
-(electric-pair-mode 1)
-(setq electric-pair-preserve-balance nil)
-
 ;; minor adjustments
 (show-paren-mode)
 (global-hl-line-mode)
+(global-linum-mode)
+
+;; (set-frame-parameter (selected-frame) 'alpha '(97 97))
+;; (add-to-list 'default-frame-alist '(alpha 97 97))
 
 (insert "Hello, you absolute legend!")
 
 ;; load emacs 24's package system. Add MELPA repository.
+
 (when (>= emacs-major-version 24)
   (require 'package)
   (setq package-archives '(("org" . "http://orgmode.org/elpa/")
@@ -58,9 +59,17 @@
 			   ("marmalade" . "https://marmalade-repo.org/packages/")))
   (package-initialize))
 
-(dolist (package '(use-package))
+;; fetch the list of packages available 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(defun install-list-of-packages (params)
+  (dolist (package params)
   (unless (package-installed-p package)
-    (package-install package)))
+    (package-install package))))
+
+(install-list-of-packages (list 'use-package))
+(install-list-of-packages '(use-package))
 
 (provide 'editor)
 

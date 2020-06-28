@@ -35,6 +35,46 @@
     (append (if (consp backend) backend (list backend))
             '(:with company-yasnippet))))
 
+;; switch-window
+(use-package switch-window
+  :ensure t
+  :bind
+  ("C-M-z" . switch-window)
+  :pin melpa)
+
+;; minimap
+(use-package minimap
+  :ensure t
+  :custom
+  (minimap-minimum-width 10)
+  (minimap-window-location 'right)
+  :config
+  (minimap-mode)
+  :pin gnu)
+
+;; powerline
+(use-package powerline
+  :ensure t
+  :config
+  (powerline-center-theme)
+  (setq powerline-default-separator 'wave)
+  :pin melpa)
+
+;; undotree
+(use-package undo-tree
+  :ensure t
+  :bind
+  ("M-/" . undo-tree-visualize)
+  :config
+  (global-undo-tree-mode)
+  :pin gnu)
+
+;; autopair
+(use-package autopair
+  :ensure t
+  :config
+  (autopair-global-mode)
+  :pin melpa)
 
 ;; company
 (use-package company

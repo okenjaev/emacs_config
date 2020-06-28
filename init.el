@@ -33,18 +33,21 @@
 (load "~/.emacs.d/lisp/editor")
 (load "~/.emacs.d/lisp/packages")
 (load "~/.emacs.d/lisp/custom")
+
+;;; init.el ends here
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (irony swiper use-package projectile magit company))))
+ '(minimap-minimum-width 10)
+ '(minimap-window-location (quote right))
+ '(package-selected-packages
+   (quote
+    (nord-theme swiper flycheck-pos-tip flycheck yasnippet-snippets yasnippet magit helm projectile company-irony-c-headers company-irony company autopair undo-tree powerline minimap switch-window use-package rtags))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;;; init.el ends here
-
