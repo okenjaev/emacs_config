@@ -175,9 +175,15 @@
   (rtags-completions-enabled t)
   :config
   (if (eq system-type 'darwin)
-      (setq rtags-path "/usr/local/bin"))
+    (setq rtags-path "/usr/local/bin"))
+  (if (eq system-type 'gnu/linux)
+      (progn
+	(setq rtags-rc-binary-name "rtags-rc")
+	(setq rtags-rdm-binary-name "rtags-rdm")
+      (setq rtags-path "/usr/bin")))
   (rtags-enable-standard-keybindings)
-  (rtags-diagnostics))
+  (rtags-diagnostics)
+  :pin melpa-stable)
 
 (use-package flycheck
   :ensure t
