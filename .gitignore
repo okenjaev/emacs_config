@@ -51,3 +51,10 @@ flycheck_*.el
 /projectile-bookmarks.eld
 /irony/
 /transient/
+
+session*
+bookmarks*
+.cache*
+.lsp*
+workspace/
+.dap*
