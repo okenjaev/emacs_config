@@ -121,6 +121,7 @@
 ;; helm-projectile
 (use-package helm-projectile
   :ensure t
+  :after helm projectile
   :config
   (helm-projectile-on)
   :pin melpa)
@@ -132,6 +133,7 @@
   ("M-x" . helm-M-x)
   ("C-x C-f" . helm-find-files)
   :config
+  (setq helm-default-display-buffer-functions '(display-buffer-in-side-window))
   (helm-mode 1))
 
 ;; magit
