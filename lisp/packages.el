@@ -87,6 +87,7 @@
   (c-mode . company-mode)
   (c++-mode . company-mode)
   (emacs-lisp-mode . company-mode)
+  (python-mode . company-mode)
   ;; (java-mode-hook . company-mode)
   :custom
   (company-minimum-prefix-length 3)
@@ -103,6 +104,12 @@
     :after company
     :config
     (add-to-list 'company-backends 'company-irony-c-headers))
+
+  (use-package company-jedi
+    :ensure t
+    :config
+    (add-to-list 'company-backends 'company-jedi)
+    :pin melpa)
 
   (defvar company-mode/enable-yas t
     "Enable yasnippet for all backends.")
@@ -133,7 +140,6 @@
   ("M-x" . helm-M-x)
   ("C-x C-f" . helm-find-files)
   :config
-  (setq helm-default-display-buffer-functions '(display-buffer-in-side-window))
   (helm-mode 1))
 
 ;; magit
@@ -358,6 +364,19 @@
   :after treemacs persp-mode ;;or perspective vs. persp-mode
   :ensure t
   :config (treemacs-set-scope-type 'Perspectives))
+
+;; (use-package anaconda-mode
+;;   :ensure t
+;;   :config
+;;   (add-hook 'python-mode-hook 'anaconda-mode)
+;;   (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+;;   :pin melpa)
+
+(use-package elpy
+  :ensure t
+  :hook
+  (elpy-enable)
+  :pin melpa)
 
 (provide 'packages)
 
