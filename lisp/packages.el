@@ -365,17 +365,31 @@
   :ensure t
   :config (treemacs-set-scope-type 'Perspectives))
 
-;; (use-package anaconda-mode
-;;   :ensure t
-;;   :config
-;;   (add-hook 'python-mode-hook 'anaconda-mode)
-;;   (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
-;;   :pin melpa)
+(use-package anaconda-mode
+  :ensure t
+  :config
+  (add-hook 'python-mode-hook 'anaconda-mode)
+  (add-hook 'python-mode-hook 'anaconda-eldoc-mode)
+  :pin melpa)
 
 (use-package elpy
   :ensure t
-  :hook
+  :config
   (elpy-enable)
+  :pin melpa)
+
+(use-package markdown-mode
+  :ensure t
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown")
+  :pin melpa-stable)
+
+(use-package iedit
+  :ensure t
+  :bind
+  ("C-c ;" . iedit-mode)
   :pin melpa)
 
 (provide 'packages)

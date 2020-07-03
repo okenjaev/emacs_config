@@ -60,3 +60,5 @@ workspace/
 .dap*
 recentf
 eclipse.jdt.ls/
+.python-environments/
+elpy/
