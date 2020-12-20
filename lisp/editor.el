@@ -30,7 +30,7 @@
 
 ;;; Code:
 
-;; disabling splash screen and startup message
+g;; disabling splash screen and startup message
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 
@@ -43,7 +43,7 @@
 (show-paren-mode)
 (global-hl-line-mode)
 (global-linum-mode)
-
+(blink-cursor-mode 0)
 ;; (set-frame-parameter (selected-frame) 'alpha '(97 97))
 ;; (add-to-list 'default-frame-alist '(alpha 97 97))
 
