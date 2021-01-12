@@ -30,7 +30,7 @@
 
 ;;; Code:
 
-g;; disabling splash screen and startup message
+;; disabling splash screen and startup message
 (setq inhibit-startup-message t)
 (setq initial-scratch-message nil)
 

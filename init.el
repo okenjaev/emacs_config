@@ -35,29 +35,3 @@
 (load "~/.emacs.d/lisp/custom")
 
 ;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-faces-vector
-   [default default default italic underline success warning error])
- '(ansi-color-names-vector
-   ["#2e3436" "#a40000" "#4e9a06" "#c4a000" "#204a87" "#5c3566" "#729fcf" "#eeeeec"])
- '(company-idle-delay 0.1)
- '(company-minimum-prefix-length 3)
- '(custom-enabled-themes (quote (wombat)))
- '(minimap-minimum-width 10)
- '(minimap-window-location (quote right))
- '(package-selected-packages
-   (quote
-    (nord-theme swiper flycheck-pos-tip flycheck yasnippet-snippets yasnippet magit helm projectile company-irony-c-headers company-irony company autopair undo-tree powerline minimap switch-window use-package rtags)))
- '(rtags-autostart-diagnostics t t)
- '(rtags-completions-enabled t t)
- '(rtags-use-helm t t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

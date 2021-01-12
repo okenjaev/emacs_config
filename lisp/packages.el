@@ -45,14 +45,6 @@
   (autopair-global-mode)
   :pin melpa)
 
-;; projectile
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode +1)
-  :bind-keymap
-  ("C-;" . projectile-command-map))
-
 ;; helm-projectile
 (use-package helm-projectile
   :ensure t
@@ -69,6 +61,14 @@
   ("C-x C-f" . helm-find-files)
   :config
   (helm-mode 1))
+
+;; projectile
+(use-package projectile
+  :ensure t
+  :init
+  (projectile-mode +1)
+  :bind-keymap
+  ("C-;" . projectile-command-map))
 
 ;; yasnippet
 (use-package yasnippet
@@ -94,6 +94,12 @@
   :ensure t
   :bind
   ("C-c ;" . iedit-mode)
+  :pin melpa)
+
+(use-package zenburn-theme
+  :ensure t
+  :config
+  (load-theme 'zenburn t)
   :pin melpa)
 
 (provide 'packages)
