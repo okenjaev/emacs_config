@@ -96,10 +96,10 @@
   ("C-c ;" . iedit-mode)
   :pin melpa)
 
-(use-package zenburn-theme
+(use-package jazz-theme
   :ensure t
   :config
-  (load-theme 'zenburn t)
+  (load-theme 'jazz t)
   :pin melpa)
 
 (provide 'packages)
